@@ -3251,12 +3251,6 @@ div#Blog1 h1 {
     width: 95.5%;
     float: none;
 }
-div#LinkList1 .icons li a {
-    padding: 16px;
-    text-decoration: none;
-    border: none;
-    background: #FFEB3B;
-}
 section#footer div.section {
     display: flex;
     flex-wrap: wrap;
@@ -3277,7 +3271,7 @@ article.post_main_02 {
     width: 100%;
 }
 </style>
-	</head>
+</head>
 <body>
 		<!-- Wrapper -->
 			<div id='wrapper'>
