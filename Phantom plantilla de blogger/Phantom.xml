@@ -3264,10 +3264,12 @@ div#LinkList1 {
 div#Blog1 {
     display: flex;
     flex-wrap: wrap;
+	width:100%;
 }
 article.post_main_02 {
     display: block;
     height: auto;
+	overflow: hidden;
     width: 100%;
 }
 </style>
