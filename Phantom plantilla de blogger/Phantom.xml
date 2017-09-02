@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
 <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' lang='es' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
-
   <head>
-
 <!-- Datos generales -->
 <meta expr:charset='data:blog.encoding'/>
 <meta content='blogger' name='generator'/>
 <meta content='summary_large_image' name='twitter:card'/>
 <b:tag expr:content='data:view.isHomepage ? &quot;blog&quot; : &quot;article&quot;' name='meta' property='og:type'/>
 <link href='https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css' rel='stylesheet'/>
-
 <!-- Responsive viewport -->
 <meta content='width=device-width,minimum-scale=1,initial-scale=1' name='viewport'/>
-
 <!-- favicon -->
 <b:tag cond='data:blog.blogspotFaviconUrl' expr:href='data:blog.blogspotFaviconUrl' name='link' rel='icon' type='image/x-icon'/>
-
 <!-- Enlace Canonico -->
 <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
 <meta expr:content='data:blog.canonicalUrl' name='twitter:url'/>
@@ -29,7 +24,6 @@
 <b:elseif cond='data:view.isSingleItem'/>
    <meta expr:content='data:blog.pageName + &quot; : Leer el articulo completo.&quot;' name='twitter:description'/>
 </b:if>
-
 <!-- Robots solo en SingleItem y Homepage -->
 <b:with value='data:view.isHomepage or data:view.isSingleItem ? &quot;index,follow&quot; : &quot;noindex,nofollow&quot;' var='pagefollow'>
    <meta expr:content='data:blog.isMobile ? &quot;noindex,noarchive&quot; : data:pagefollow' name='robots'/>
@@ -37,7 +31,6 @@
       <meta content='noodp,noydir' name='robots'/>
    </b:if>
 </b:with>
-
 <!-- Optimizando Titulos -->
 <b:if cond='data:view.isError'>
    <title>Error 404 en <data:blog.pageTitle/></title>
@@ -48,7 +41,6 @@
       <title><data:pageLength/></title>
    </b:with>
 </b:if>
-
 <!-- Optimizando Posts -->
 <b:if cond='data:view.isPost'>
    <!-- La primera imagen del post -->
@@ -59,13 +51,10 @@
    </b:if>
 </b:if>
 <!-- in your header -->
-
-
 <!--[if lt IE 9]>
    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 <![endif]-->
 <!-- Fin de datos-->
-
  &lt;style type=&quot;text/css&quot;&gt;&lt;!-- /*<b:skin><![CDATA[*/]]></b:skin><style type='text/css'>
 @import url(&quot;https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900&quot;);
 /*
@@ -73,7 +62,6 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
 /* Reset */
 
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -3380,12 +3368,11 @@ ul.icons li a {
 										</div>
 									</a>
 								</article>
-  <b:else/>
+								<b:else/>
 <article class='post_main_02'>
   <h1><data:post.title/></h1>
-	<p><data:post.body/></p>							
+	<p><data:post.body/></p>						
   </article>	
-	
         </b:if>
       </b:loop>
       </b:includable>
@@ -3402,7 +3389,6 @@ ul.icons li a {
 
 </b:includable>
                               <b:includable id='comment_picker' var='post'>
-
     <b:include data='post' name='iframe_comments'/>
     <b:include data='post' name='threaded_comments'/>
     <b:include data='post' name='comments'/>
@@ -3427,9 +3413,7 @@ ul.icons li a {
                           </b:section>
 						</div>
 					</div>
-
 				<!-- Footer -->
-			
 <div class='inner'>
 <section id='footer'>
   <b:section id='Pie_de_pagina'>
@@ -3472,13 +3456,10 @@ ul.icons li a {
    </b:includable>
     </b:widget>
   </b:section>
-
 <ul class='copyright'>
 <li><data:blog.title/></li><li>Design: <a href='http://html5up.net'>HTML5 UP</a></li><li>Adaptado por: <a href='http://codesblue.info'>Codesblue</a></li>
-							</ul>
+</ul>
 </section>
-
-
 </div></div>
 	&lt;noscript&gt;
 &lt;!--</body>--&gt;
