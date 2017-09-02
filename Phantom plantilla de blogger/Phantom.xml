@@ -9,6 +9,7 @@
 <meta content='blogger' name='generator'/>
 <meta content='summary_large_image' name='twitter:card'/>
 <b:tag expr:content='data:view.isHomepage ? &quot;blog&quot; : &quot;article&quot;' name='meta' property='og:type'/>
+<link href='https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css' rel='stylesheet'/>
 
 <!-- Responsive viewport -->
 <meta content='width=device-width,minimum-scale=1,initial-scale=1' name='viewport'/>
@@ -20,7 +21,6 @@
 <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
 <meta expr:content='data:blog.canonicalUrl' name='twitter:url'/>
 <link expr:href='data:blog.canonicalUrl' rel='canonical'/>
-
 <!-- Descripcion -->
 <b:if cond='data:blog.metaDescription'>
    <meta expr:content='data:blog.metaDescription' property='og:description'/>
@@ -58,6 +58,8 @@
       <meta expr:content='data:blog.postImageUrl' property='og:image'/>
    </b:if>
 </b:if>
+<!-- in your header -->
+
 
 <!--[if lt IE 9]>
    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -66,7 +68,6 @@
 
  &lt;style type=&quot;text/css&quot;&gt;&lt;!-- /*<b:skin><![CDATA[*/]]></b:skin><style type='text/css'>
 @import url(&quot;https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900&quot;);
-
 /*
 	Phantom by HTML5 UP
 	html5up.net | @ajlkn
@@ -3272,6 +3273,10 @@ article.post_main_02 {
 	overflow: hidden;
     width: 100%;
 }
+ul.icons li a {
+    padding: 13px;
+    border: none;
+}
 </style>
 </head>
 <body>
@@ -3445,15 +3450,15 @@ article.post_main_02 {
     </b:widget>
     <b:widget id='LinkList1' locked='false' title='Social Profiles' type='LinkList' version='1'>
       <b:widget-settings>
-        <b:widget-setting name='link-3'>#</b:widget-setting>
+        <b:widget-setting name='link-3'>http://</b:widget-setting>
         <b:widget-setting name='sorting'>NONE</b:widget-setting>
-        <b:widget-setting name='text-1'><![CDATA[<i class="fa fa-youtube" aria-hidden="true"></i>]]></b:widget-setting>
-        <b:widget-setting name='link-1'>https://www.youtube.com/codesblue</b:widget-setting>
-        <b:widget-setting name='text-0'><![CDATA[<i class="fa fa-linkedin"></i>]]></b:widget-setting>
-        <b:widget-setting name='link-2'>https://www.facebook.com/codesblue</b:widget-setting>
-        <b:widget-setting name='text-3'><![CDATA[<i class="fa fa-twitter"></i>]]></b:widget-setting>
-        <b:widget-setting name='link-0'>#</b:widget-setting>
-        <b:widget-setting name='text-2'><![CDATA[<i class="fa fa-facebook"></i>]]></b:widget-setting>
+        <b:widget-setting name='text-1'><![CDATA[<i class="devicon-github-plain"></i>]]></b:widget-setting>
+        <b:widget-setting name='link-1'>http://</b:widget-setting>
+        <b:widget-setting name='text-0'><![CDATA[<i class="devicon-google-plain colored"></i>]]></b:widget-setting>
+        <b:widget-setting name='link-2'>http://</b:widget-setting>
+        <b:widget-setting name='text-3'><![CDATA[<i class="devicon-facebook-plain"></i>]]></b:widget-setting>
+        <b:widget-setting name='link-0'>http://</b:widget-setting>
+        <b:widget-setting name='text-2'><![CDATA[<i class="devicon-twitter-plain"></i>]]></b:widget-setting>
       </b:widget-settings>
       <b:includable id='main'>
 	<h2><data:title/></h2>
@@ -3475,7 +3480,6 @@ article.post_main_02 {
 
 
 </div></div>
-
 	&lt;noscript&gt;
 &lt;!--</body>--&gt;
 &lt;/noscript&gt;
