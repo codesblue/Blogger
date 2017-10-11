@@ -21,15 +21,15 @@ Web site:    Codesblue.info
 
 <b:section id="Header"> <!--Creamos el contenedor de nuestra aplicación -->
 
-<widget id="Header1" type="Header"> <!--Declaramos nuestra aplicación -->
+<b:widget id="Header1" type="Header"> <!--Declaramos nuestra aplicación -->
 
 <b:includable id="main"><!--Cuerpo de nuestra aplicación la cual se encargara de almacenar nuestra variable <data> de blogger -->
 
 </b:includable>
 
-</widget>
+</b:widget>
 
-
+</b:section>
 
 <b:section id="main"/><!--etiqueta especial de blogger utilizada para declara el cuerpo de nuestro aplicativo-->
 
