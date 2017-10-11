@@ -1,22 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head> <!--encabezado de nuestro documento -->
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <b:tag  name="title"><data:blog.title></b:tag>
-    <b:skin>
+<?xml version="1.0" encoding="UTF-8" ?> <!--definimos la codificación -->
+<!DOCTYPE html> <!--declaramos nuestro documento -->
+<html lang="es"> <!--definimos el idioma -->
+<head> <!--encabezado del documento -->
+<b:skin>
+<![CDATA[/*
 <!--etiqueta especial de blogger utilizada para incluir los css-->
-    </b:skin>
+-----------------------------------------------
+Blogger Template Style
+Name:        Nombre de plantilla
+Author :     Francisco Banegas
+License:     libre
+Web site:    Codesblue.info
+----------------------------------------------- */
+]]> </b:skin>
+
 </head>
-<body><!--cuerpo de nuestro documento -->
-    <b:section id="Header">   <!--Creamos el contenedor de nuestra aplicación -->
-    <b:widget id="Header1" type="Header"> <!--Declaramos nuestra aplicación -->
-    <b:includable id="main"><!--Cuerpo de nuestra aplicación la cual se encargara de almacenar nuestra variable <data> de blogger -->
-    <data:blog.title/><!--de esta manera nuestra aplicación muestra el titulo de mi pagina web-->
-    </b:includable>
-    </b:widget>
-    </b:section>
-    <b:section id="main"></b:section><!--etiqueta especial de blogger utilizada para declara el cuerpo de nuestro aplicativo-->
+
+
+<body> <!--cuerpo de nuestro documento -->
+
+<b:section id="Header"> <!--Creamos el contenedor de nuestra aplicación -->
+
+<widget id="Header1" type="Header"> <!--Declaramos nuestra aplicación -->
+
+<b:includable id="main"><!--Cuerpo de nuestra aplicación la cual se encargara de almacenar nuestra variable <data> de blogger -->
+
+</b:includable>
+
+</widget>
+
+
+
+<b:section id="main"/><!--etiqueta especial de blogger utilizada para declara el cuerpo de nuestro aplicativo-->
+
 </body>
 </html>
