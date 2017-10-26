@@ -482,7 +482,7 @@ span.datetime.secondary-text {
 </div>
    </b:includable>
    </b:widget>
-   <b:widget cond='data:view.isHomepag' id='Text4' locked='false' title='Talleres' type='Text'>
+   <b:widget cond='data:view.isHomepage' id='Text4' locked='false' title='Talleres' type='Text'>
      <b:widget-settings>
        <b:widget-setting name='content'><![CDATA[<br /><h4>Disfruta de nuestros material echo a mediada</h4>]]></b:widget-setting>
      </b:widget-settings>
@@ -498,7 +498,7 @@ span.datetime.secondary-text {
   <b:include name='quickedit'/>
 </b:includable>
    </b:widget>
-   <b:widget cond='data:view.isHomepag' id='LinkList1' locked='false' title='couse icon' type='LinkList' version='1'>
+   <b:widget cond='data:view.isHomepage' id='LinkList1' locked='false' title='couse icon' type='LinkList' version='1'>
      <b:widget-settings>
        <b:widget-setting name='link-5'>#</b:widget-setting>
        <b:widget-setting name='link-3'>http://</b:widget-setting>
