@@ -15,8 +15,6 @@ Web site:    Codesblue.info
 ]]> </b:skin>
 
 </head>
-
-
 <body> <!--cuerpo de nuestro documento -->
 
 <b:section id="Header"> <!--Creamos el contenedor de nuestra aplicación -->
