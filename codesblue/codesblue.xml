@@ -734,4 +734,4 @@ div#Blog1 div div.post_item .item_title {
 <!-- Google Analytics -->
 <b:include data='blog' name='google-analytics'/>
 &lt;!--</body>--&gt;&lt;/body&gt;
-</html> 
+</html>
