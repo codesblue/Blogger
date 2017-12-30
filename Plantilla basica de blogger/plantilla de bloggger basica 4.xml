@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!--definimos la codificación -->
+<!DOCTYPE html> <!--declaramos nuestro documento -->
+<html lang="es"> <!--definimos el idioma -->
+<head> <!--encabezado del documento -->
+<b:skin>
+<![CDATA[/*
+<!--etiqueta especial de blogger utilizada para incluir los css-->
+-----------------------------------------------
+Blogger Template Style
+Name:        Nombre de plantilla
+Author :     Francisco Banegas
+License:     libre
+Web site:    Codesblue.info
+----------------------------------------------- */
+]]> </b:skin>
+ 
+</head>
+<body> <!--cuerpo de nuestro documento -->
+ 
+<b:section id="Header"> <!--Creamos el contenedor de nuestra aplicación -->
+ 
+<b:widget id="Header1" type="Header"> <!--Declaramos nuestra aplicación -->
+ 
+<b:includable id="main"><!--Cuerpo de nuestra aplicación la cual se encargara de almacenar nuestra variable <data> de blogger -->
+ 
+</b:includable>
+ 
+</b:widget>
+ 
+</b:section>
+ 
+  <b:section id="main"><!--etiqueta especial de blogger utilizada para declara el cuerpo de nuestro aplicativo-->
+<b:widget id="Blog1" type="Blog"><!--declaramos aplicativo-->
+  <b:includable id="main"><!--cuepo de nuestro aplicativo-->
+    <b:loop values="data:posts" var="post" >
+    <!--datos a mostrar-->
+     
+ <b:if cond="data:view.isHomepage">
+ 
+<!--data:view.isHomepage si lo encontramos en la home muestra lo siguiente-->
+    
+ <a expr:href="data:post.url">  <data:post.title/></a> 
+     <!--
+     data:post.title == titulo de mi articulo
+     data:post.url == url hacia mi articulo 
+     -->
+ 
+        <b:elseif cond="data:view.isPost"/>
+ 
+<!--data:view.isPost si lo encontramos dentro de un articulo muestra lo siguiente  -->
+ 
+   <h1><data:post.title/></h1>
+   <data:post.body/>
+<!---
+data:post.title == titulo de mi articulo
+data:post:body  == contenido de mi entrada 
+-->
+        <b:elseif  cond="data:view.isPage" />
+ 
+<!--data:view.isPage si lo encontramos dentro de una pagina estatica  muestra lo siguiente  -->
+ <h1><data:post.title/></h1>
+   <data:post.body/>
+ 
+</b:if>
+</b:loop>
+</b:includable>
+    </b:widget>
+</b:section>
+</body>
+</html>

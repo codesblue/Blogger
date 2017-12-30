@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!--definimos la codificación -->
+<!DOCTYPE html> <!--declaramos nuestro documento -->
+<html lang="es"> <!--definimos el idioma -->
+<head> <!--encabezado del documento -->
+<b:skin>
+<![CDATA[/*
+<!--etiqueta especial de blogger utilizada para incluir los css-->
+-----------------------------------------------
+Blogger Template Style
+Name:        Nombre de plantilla
+Author :     Francisco Banegas
+License:     libre
+Web site:    Codesblue.info
+----------------------------------------------- */
+]]> </b:skin>
+
+</head>
+<body> <!--cuerpo de nuestro documento -->
+
+<b:section id="Header"> <!--Creamos el contenedor de nuestra aplicación -->
+
+<b:widget id="Header1" type="Header"> <!--Declaramos nuestra aplicación -->
+
+<b:includable id="main"><!--Cuerpo de nuestra aplicación la cual se encargara de almacenar nuestra variable <data> de blogger -->
+<b:if cond='data:blog.pageType == "index" '>
+<!–contenido que se mostrar solamente en la web principal–>
+<data:title/> <data:description/>
+<b:elseif cond='data:blog.pageType == "item" '/>
+<!–contenido que se mostrara dentro de los artículos–>
+<data:title/>
+<b:else/>
+<!–mostrara un error en caso de que la condicional se encuentre mal ejecutada–>
+<h1>Error a declara condicional por favor vuelva a verificar su código </h1>
+</b:if>
+</b:includable>
+
+</b:widget>
+
+</b:section>
+
+<b:section id="main"/><!--etiqueta especial de blogger utilizada para declara el cuerpo de nuestro aplicativo-->
+
+</body>
+</html>
