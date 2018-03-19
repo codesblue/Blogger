@@ -193,7 +193,7 @@ div.column.is-8:first-child {
 <nav class='navbar is-white'>
       <div class='navbar-brand'>
         <a class='navbar-item brand-text' expr:href='data:homepageUrl'>
-          <data:blog.title/>
+          <data:blog.title/>        
         </a>
         <div class='navbar-burger burger' data-target='navMenu'>
           <span/>
@@ -211,7 +211,7 @@ div.column.is-8:first-child {
         </div>
       </div>
     </nav>
-
+      
    </b:includable>
     </b:widget>
   </b:section>
@@ -219,7 +219,7 @@ div.column.is-8:first-child {
         <div class='column is-8 is-offset-2'>
 
   <b:section id='mensaje'>
-    <b:widget id='Text1' locked='false' title='' type='Text' version='1'>
+    <b:widget cond='data:view.isHomepage' id='Text1' locked='false' title='' type='Text' version='1'>
       <b:widget-settings>
         <b:widget-setting name='content'><![CDATA[<h1 class="title"> <i class="fa fa-bell-o"></i> Lorem dolor sed viverra </h1> <h2 class="subtitle"> Consequat id porta nibh venenatis cras sed felis eget </h2>]]></b:widget-setting>
       </b:widget-settings>
@@ -230,11 +230,11 @@ div.column.is-8:first-child {
      <data:content/>
            </div>
             </div>
-          </section>
+          </section>   
    </b:includable>
     </b:widget>
   </b:section>
-
+  
 <!-- Entradas -->
 <b:section id='Blog'>
   <b:widget id='Blog1' locked='true' title='Entradas del blog' type='Blog' version='1'>
@@ -284,10 +284,12 @@ div.column.is-8:first-child {
     <b:includable id='backlinkDeleteIcon' var='backlink'><!--none--></b:includable>
     <b:includable id='backlinks' var='post'><!--none--></b:includable>
     <b:includable id='comment-blogger' var='post'>
-      <b:if cond='data:post.commentSource == 1'>
+     <div class='notification is-primary'>
+
+ <b:if cond='data:post.commentSource == 1'>
          <b:include data='post' name='iframe_comments'/>
       <b:else/>
-      <h4><data:post.numComments/> Comentario<b:if cond='data:post.numComments neq 1'>s</b:if></h4>
+      <h4><data:post.numComments/> Comentario<b:if cond='data:post.numComments neq 1'>s</b:if></h4> 
       <div class='comments' id='comments'>
          <div class='comments-content'>
             <div id='comment-holder'><data:post.commentHtml/></div>
@@ -296,6 +298,7 @@ div.column.is-8:first-child {
          <b:include data='post' expr:name='data:post.allowNewComments ? &quot;threaded-comment-form&quot; : &quot;comment_status&quot;'/>
       </div>
       </b:if>
+  </div>
    </b:includable>
     <b:includable id='comment-disqus'>
       <div id='disqus_thread'/>
@@ -336,7 +339,7 @@ div.column.is-8:first-child {
       </div>
    </b:includable>
     <b:includable id='post' var='post'>
-
+    
       <b:if cond='data:view.isMultipleItems'>
 
       <!--{{ Pagina principal }}-->
@@ -430,5 +433,7 @@ div.column.is-8:first-child {
 <!-- Google Analytics -->
 <b:include data='blog' name='google-analytics'/>
   </div>
+
+  <b:section id='Pie de pagina'/>
 &lt;!--</body>--&gt;&lt;/body&gt;
 </html>
