@@ -147,10 +147,10 @@ pre {
 
 <b:skin><![CDATA[
 /*!
-=> Theme Name: {{ NAME }}
-=> Theme URI: {{ URL }}
-=> Author: {{ AUTOR NAME }}
-=> Author URI: {{ AUTOR URL }}
+=> Theme Name: Blog template free
+=> Theme URI: codesblue.pro
+=> Author: Francisco Banegas
+=> Author URI: codesblue.pro/autores
 => License: Creative Commons Atribucion-NoComercial 4.0 Internacional
 => License URI: http://creativecommons.org/licenses/by-nc/4.0/
 */
