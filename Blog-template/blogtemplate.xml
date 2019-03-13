@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
 <html b:css='false' b:responsive='true' b:version='2' lang='es' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
@@ -121,6 +121,9 @@ pre:before {
     font-weight: 400;
     font-size: 14px;
 }
+div#disqus_thread {
+    padding: 15px;
+}
 pre {
     font-family: Monaco, "Andale Mono", "Courier New", Courier, monospace;
     background-color: #2c3e50;
@@ -147,13 +150,46 @@ pre {
 
 <b:skin><![CDATA[
 /*!
-=> Theme Name: Blog template free
-=> Theme URI: codesblue.pro
+=> Theme Name: Blog Template
+=> Theme URI: https://codesblue.pro
 => Author: Francisco Banegas
-=> Author URI: codesblue.pro/autores
+=> Author URI:  https://facebook.com/codesblue
 => License: Creative Commons Atribucion-NoComercial 4.0 Internacional
 => License URI: http://creativecommons.org/licenses/by-nc/4.0/
 */
+
+/*Variables*/
+/*colores globales*/
+
+<Group description="global" selector=".fondo">
+<Variable name="fondo" description="Color de fondo de la pagina" type="color" default="#2a2e2e" value="#2a2e2e"/>
+<Variable name="color.global" description="Color global" type="color" default="#f5f5f5"  value="#f5f5f5"/>
+</Group>
+/*Alto y Ancho del header*/
+<Group description="Widths" selector=".container__main">
+      <Variable name="ancho.header" description="Header ancho" type="length" min="800px" max="1600px" default="1348px" value="1348px"/>
+      <Variable name="alto.header" description="Header alto" type="length" min="200px" max="600px" default="225px" value="225px"/>
+ </Group>
+
+ <Group description="Configurar Header" selector="header">
+/*Header*/
+      <Variable name="title.color" description="Color del titulo" type="color" default="#fff" value="#ffffff"/>
+	  <Variable name="title.description" description="Color de la descripción" type="color" default="#fff" value="#ffffff"/>
+	  <Variable name="header.fondo" description="Color de fondo" type="color" default="#2a2e2e" value="#2a2e2e"/>
+      <Variable name="title.font" description="Fuente y tamaño del titulo" type="font"  default="normal normal 50px 'Raleway', sans-serif" value="normal normal 50px &#39;Raleway&#39;, sans-serif"/>
+ <Variable name="title.font.description" description="Fuente y tamaño de la descripcion" type="font"  default="normal normal 30px 'Raleway', sans-serif" value="normal normal 30px &#39;Raleway&#39;, sans-serif"/>
+	
+    </Group>
+
+/*Footer*/
+
+<Group description="Configuracion del footer" selector=".w3-dark-grey">
+
+  <Variable name="fondo.pie" description="Color de fondo" type="color" default="#616161" value="#616161"/>
+
+</Group>
+
+
 /*Deleted: unnecessary elements*/
 .singleton-element:not(.cookie-choices-info),
 .item-control.blog-admin,
@@ -176,40 +212,115 @@ body#layout .right{float: right;width: 50%;}
 .comment-thread ol li {
     list-style: none;
 }
-
-
-.avatar-image-container {
-    width: 83px;
-    float: left;
-    height: 77px;
+.fondo{background-color:$(fondo);}
+header{
+ width: $(ancho.header) ;
+ background-color:$(header.fondo);
+ height: $(alto.header) ;
 }
-h4.w3-container.w3-padding {
-    background: khaki;
+header.w3-container.w3-center.w3-padding-32 h1 {
+        color: $(title.color);
+		font: $(title.font);
+	
 }
-span.datetime.secondary-text {
-    padding: 8px;
+header.w3-container.w3-center.w3-padding-32 p{
+       color: $(title.description);
+		font: $(title.font.description);
 }
-
-.comment-block {
-    float: left;
-    width: 81%;
-    padding: 7px;
-    background: #fff;
+.w3-container h4 {
+    color: $(color.global);
 }
-.thread-count {
-    color: #795548;
+#sidebar .w3-container.w3-white h4 {
+    color: #000;
 }
-.avatar-image-container img {
+.w3-dark-grey{
+background-color: $(fondo.pie)!important;
+}
+@media only screen and (max-width:770px){
+.w3-container.w3-white img {
     width: 100%;
+}
+header {
+    width: 100%;
+}
 }
 ]]></b:skin>
 
+<b:if cond='data:view.isLayoutMode'>
+<b:template-skin><![CDATA[
+
+div#sidebar {
+    float: left;
+    color: #f5f5f5;
+    width: 39%;
+}
+
+body#layout .add_widget {
+    border: 1px dashed #ccc;
+    padding: 16px;
+    position: relative;
+    text-align: left;
+    background-color: #2ecc71;
+}
+
+body#layout .add_widget a{
+color:#f5f5f5;
+}
+
+body#layout div.widget div {
+    float: none;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: auto;
+}
+div#Blog {
+    width: 50%;
+    float: left;
+}
+div#Documentacion {
+    float: left;
+    width: 95%;
+}
+body#layout .editlink:before {
+    content: "Modificar";
+    background: #15c;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    color: #fff;
+}
+div#Text1 .editlink:before {
+    content: "Ver";
+    color: #fff;
+    right: auto;
+    padding-right: 15px;
+    padding-left: 11px;
+}
+div#Documentacion h4:before {
+    content: "Tienes algun problema al momento de instalar y usar el template?";
+    background: #2ecc71;
+    color: #fff;
+    width: 94.6%;
+    padding: 5px;
+    left: 16px;
+    position: absolute;
+}
+div#Documentacion .add_widget {
+    display: none;
+}
+]]></b:template-skin>
+</b:if>
+
 &lt;!--</head>--&gt;&lt;/head&gt;
 
-<body class='w3-light-grey'>
+<body class='fondo' id='fondo'>
+
+
 <div class='w3-content' style='max-width:1400px'>
 <b:section id='Header'>
-  <b:widget id='Header1' locked='false' title='Blog Template (Cabecera)' type='Header' version='1'>
+  <b:widget id='Header1' locked='true' title='Blog Template (Cabecera)' type='Header' version='1'>
     <b:widget-settings>
       <b:widget-setting name='displayUrl'/>
       <b:widget-setting name='displayHeight'>0</b:widget-setting>
@@ -233,6 +344,20 @@ span.datetime.secondary-text {
     <b:includable id='title'>
   <b:tag cond='data:blog.url != data:blog.homepageUrl' expr:href='data:blog.homepageUrl' name='a'>
     <data:title/>
+<title>
+<b:switch var='data:blog.pageType'>
+  <b:case value='index'/>
+  <h1>hola mundo</h1>
+  <b:case value='item'/>
+   <h1>hola mundo 2</h1>
+  <b:case value='static_page'/>
+   <h1>hola mundo 3</h1>
+  <b:case value='archive'/>
+   <h1>hola mundo 4</h1>
+  <b:case value='error_page'/>
+    Page 404 - <data:view.title.escaped/>
+</b:switch>
+</title>
   </b:tag>
 </b:includable>
   </b:widget>
@@ -251,6 +376,7 @@ span.datetime.secondary-text {
       <b:widget-setting name='showCommentLink'>true</b:widget-setting>
       <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
       <b:widget-setting name='showAuthor'>false</b:widget-setting>
+      <b:widget-setting name='disableGooglePlusShare'>true</b:widget-setting>
       <b:widget-setting name='style.linkcolor'>#0000ff</b:widget-setting>
       <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
       <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
@@ -277,7 +403,7 @@ span.datetime.secondary-text {
       <b:loop values='data:posts' var='post'>
          <b:include data='post' name='post'/><!-- insertamos entradas -->
          <!-- insertamos comentarios -->
-         <b:with value='[&quot;blogger&quot;,&quot;Shortname&quot;,&quot;10&quot;]' var='commentsType'><!-- Elige entre facebook, disqus o blogger -->
+         <b:with value='[&quot;disqus&quot;,&quot;Shortname&quot;,&quot;10&quot;]' var='commentsType'><!-- Elige entre facebook, disqus o blogger -->
             <b:include data='post' expr:name='data:view.isPreview ? &quot;comment_status&quot; : (data:post.allowComments ? &quot;comment-&quot; + data:commentsType[0] : &quot;comment_status&quot;)'/>
             <noscript><p class='info'>Los comentarios requieren javascript</p></noscript>
          </b:with>
@@ -303,15 +429,17 @@ span.datetime.secondary-text {
       </b:if>
    </b:includable>
     <b:includable id='comment-disqus'>
-      <div id='disqus_thread'/>
-      <script type='text/javascript'>
-         var disqus_url = &quot;<data:blog.url.canonical/>&quot;,
-         disqus_shortname = &quot;<b:eval expr='data:commentsType[1]'/>&quot;;//<![CDATA[
-         (function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-         })();//]]>
-      </script>
+     <div id='disqus_thread'/>
+<script>
+
+(function() { // DON&#39;T EDIT BELOW THIS LINE
+var d = document, s = d.createElement(&#39;script&#39;);
+var url= &#39;https://https-blog-codesblue-blogspot-com.disqus.com/embed.js&#39;
+s.src = url;
+s.setAttribute(&#39;data-timestamp&#39;, +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>                            
    </b:includable>
     <b:includable id='comment-facebook'>
       <div class='fb-comments' expr:data-href='data:blog.url.canonical' expr:data-numposts='data:commentsType[2]'/>
@@ -358,7 +486,7 @@ span.datetime.secondary-text {
           <p><b><a class='w3-button w3-padding-large w3-white w3-border' expr:href='data:post.url'>Leer &#187;</a></b></p>
         </div>
         <div class='w3-col m4 w3-hide-small'>
-          <p><span class='w3-padding-large w3-right'><b>Comentarios</b> <span class='w3-tag'><data:post.numComments/></span></span></p>
+          <p><span class='w3-padding-large w3-right'><b>Autor</b> <span class='w3-tag'><data:post.author/></span></span></p>
         </div>
       </div>
     </div>
@@ -404,7 +532,7 @@ span.datetime.secondary-text {
 <b:section id='sidebar'>
   <b:widget id='FeaturedPost1' locked='false' title='Entrada destacada' type='FeaturedPost' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='showSnippet'>true</b:widget-setting>
+      <b:widget-setting name='showSnippet'>false</b:widget-setting>
       <b:widget-setting name='showPostTitle'>true</b:widget-setting>
       <b:widget-setting name='postId'>7347465304890293486</b:widget-setting>
       <b:widget-setting name='showFirstImage'>true</b:widget-setting>
@@ -446,7 +574,7 @@ span.datetime.secondary-text {
       <b:case value='true'/>
       <data:postSummary/>
       <b:case value='false'/>
-		<p>Habilitar el resumen de entrada [Si quieres una versión si restricción compra la premium  en codesblue.pro/soporte ]</p>
+		<p>Es imposible deshabilitar esta opción en la versión Free[Adquiere versión sin restricciones en codesblue.pro/soporte ]</p>
 	</b:switch>
 </b:includable>
     <b:includable id='titulo'>
@@ -454,7 +582,7 @@ span.datetime.secondary-text {
        		<b:case value='true'/>
        		<data:postTitle/>
 	   	<b:case value='false'/>
-       		<p>Habilitar el titulo de la entrada para que el aplicativo funcione correctamente[Si quieres una versión si restricción compra la premium  en codesblue.pro/soporte ]</p>
+       		<p>Es imposible deshabilitar esta opción en la versión Free[Adquiere versión sin restricciones en codesblue.pro/soporte ]</p>
 	</b:switch>	
 	</b:includable>
   </b:widget>
@@ -518,8 +646,21 @@ span.datetime.secondary-text {
 <b:include data='blog' name='google-analytics'/>
   </div>
 <!--Pie de pagina-->
+  <b:section id='Documentacion'>
+    <b:widget id='Text1' locked='true' title='Ayuda' type='Text' version='1'>
+      <b:widget-settings>
+        <b:widget-setting name='content'><![CDATA[<div>Ayuda: </div><div>https://codesblue.pro/soporte</div><div><br /></div><div>Versión completa en :</div><div><span style="font-size: 100%;">https://codesblue.pro/blog-template</span></div><div><span style="font-size: 100%;"><br /></span></div><div><span style="font-size: 100%;">Novedades:</span></div><div><span style="font-size: 100%;"><br /></span></div><div><span style="font-size: 100%;">https://www.facebook.com/codesblue</span></div><div><span style="font-size: 100%;"><br /></span></div><div>https://www.youtube.com/codesblue</div><div><span style="font-size: 100%;"><br /></span></div>]]></b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+<b:if cond='data:view.isLayoutMode'>
+  <data:content/>
+     </b:if>
+   </b:includable>
+    </b:widget>
+  </b:section>
+
 <footer class='w3-container w3-dark-grey w3-padding-32 w3-margin-top'>
-  <p>Powered by <a href='https://www.w3schools.com/w3css/default.asp' target='_blank'>w3.css</a> Adaptación echa con &#10084; por <a href='http://codesblue.pro/recursos'>Codesblue</a></p>
+  <p>Powered by <a href='https://www.w3schools.com/w3css/default.asp' target='_blank'>w3.css</a> Adaptación echa con &#10084; por <a href='https://codesblue.pro/'>Codesblue</a> - Framework <a href='https://github.com/zkreations/Canvas.xml/blob/master/README.md'>Canvas</a></p>
 </footer>
 &lt;!--</body>--&gt;&lt;/body&gt;
 </html>
