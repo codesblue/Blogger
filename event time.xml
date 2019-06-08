@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:responsive='true' b:version='2' lang='es' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<!-- Datos generales -->
+<meta expr:charset='data:blog.encoding'/>
+<meta content='blogger' name='generator'/>
+<meta content='summary_large_image' name='twitter:card'/>
+<b:tag expr:content='data:view.isMultipleItems ? &quot;website&quot; : &quot;article&quot;' name='meta' property='og:type'/>
+<!-- Solo para adultos -->
+<b:if cond='data:blog.adultContent'>
+   <meta content='adult' name='rating'/>
+</b:if>
+
+<!-- Responsive viewport -->
+<meta content='width=device-width,minimum-scale=1,initial-scale=1' name='viewport'/>
+
+<!-- Datos personalizados del usuario -->
+<link href='https://plus.google.com/IDpaginaGoogle' rel='Publisher'/>
+<meta content='@blogger' name='twitter:site'/>
+<meta content='@google' name='twitter:creator'/>
+
+<!-- favicon -->
+<b:tag expr:href='data:blog.blogspotFaviconUrl' name='link' rel='icon' type='image/x-icon'/>
+
+<!-- Enlace Canonico -->
+<meta expr:content='data:blog.url.canonical' property='og:url'/>
+<meta expr:content='data:blog.url.canonical' name='twitter:url'/>
+<link expr:href='data:blog.url.canonical' rel='canonical'/>
+<link href='https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou' rel='stylesheet'/>
+<link crossorigin='anonymous' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr' rel='stylesheet'/>
+
+<!-- Descripcion -->
+<b:if cond='data:blog.metaDescription'>
+   <meta expr:content='data:blog.metaDescription' property='og:description'/>
+   <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+   <meta expr:content='data:blog.metaDescription' name='description'/>
+<b:elseif cond='data:view.isSingleItem'/>
+   <meta expr:content='data:blog.pageName + &quot; : Leer el articulo completo.&quot;' name='twitter:description'/>
+</b:if>
+
+<!-- Meta Robots Relativo -->
+<b:with value='data:view.isHomepage or data:view.isSingleItem ? &quot;index,follow&quot; : &quot;noindex,nofollow&quot;' var='robots'>
+   <meta expr:content='data:blog.isMobile ? &quot;noindex,noarchive&quot; : data:robots' name='robots'/>
+   <b:if cond='data:robots == &quot;index,follow&quot;'>
+      <meta content='noodp,noydir' name='robots'/>
+   </b:if>
+</b:with>
+
+<!-- Optimizando Posts -->
+<b:if cond='data:view.isPost and data:view.featuredImage'>
+   <link expr:href='data:view.featuredImage' rel='image_src'/>
+   <meta expr:content='data:view.featuredImage' name='twitter:image'/>
+   <meta expr:content='data:view.featuredImage' property='og:image'/>
+</b:if>
+
+<!-- Optimizando Titulos -->
+<b:if cond='data:view.isError'>
+   <title>Error 404 en <data:blog.pageTitle/></title>
+<b:else/>
+   <b:with value='data:blog.pageName.length != 0 ? data:blog.pageName : data:blog.title' var='titles'>
+      <meta expr:content='data:titles' property='og:title'/>
+      <meta expr:content='data:titles' name='twitter:title'/>
+      <title><b:eval expr='data:view.search.label ? &quot;Entradas de &quot; + data:titles : data:titles'/></title>
+   </b:with>
+</b:if>
+
+<!-- feeds -->
+<b:tag cond='data:blog.feedLinks' expr:href='data:blog.homepageUrl.canonical path &quot;feeds/posts/default&quot; ' expr:title='data:blog.title + &quot; - Atom&quot;' name='link' rel='alternate' type='application/atom+xml'/>
+<b:tag cond='data:blog.feedLinks' expr:href='data:blog.homepageUrl.canonical path &quot;feeds/posts/default&quot; params {alt: &quot;rss&quot;}' expr:title='data:blog.title + &quot; - RSS&quot;' name='link' rel='alternate' type='application/rss+xml'/>
+
+<!-- schema ld+json -->
+<script type='application/ld+json'>
+{&quot;@context&quot;:&quot;http://schema.org&quot;,&quot;@type&quot;:&quot;WebSite&quot;,&quot;name&quot;:&quot;<data:blog.title/>&quot;,&quot;url&quot;:&quot;<data:blog.homepageUrl.canonical/>&quot;,&quot;potentialAction&quot;:{&quot;@type&quot;:&quot;SearchAction&quot;,&quot;target&quot;:&quot;<data:blog.homepageUrl.canonical/>search?q={search_term_string}&quot;,&quot;query-input&quot;:&quot;required name=search_term_string&quot;}}
+</script>
+
+<!--[if lt IE 9]>
+   <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<![endif]-->
+<!-- Fin de datos-->
+
+<style type='text/css'>/*<![CDATA[*/
+/* => CSS Global */
+
+/*]]>*/</style>
+
+<b:skin><![CDATA[
+/*!
+=> Theme Name:Event Time
+=> Theme URI: codesblue.pro/plugins
+=> Author: Francisco Banegas
+=> Author URI:https://facebook.com/codesblue
+=> License: Creative Commons Atribucion-NoComercial 4.0 Internacional
+=> License URI: http://creativecommons.org/licenses/by-nc/4.0/
+*/
+
+<Group description="Event Time">
+<Variable name="color.title" description="Color de titulo" type="color" default="#141414" value="#141414"/>
+<Variable name="color.date" description="Color de fecha" type="color" default="#999" value="#999999"/>
+<Variable name="fondo.interno" description="Fondo Principal" type="color" default="#e5e5e5" value="#e5e5e5"/>
+<Variable name="fondo" description="Fondo interno" type="color" default="#2a2e2e" value="#2a2e2e"/>
+<Variable name="color.estado" description="Color del boton de estado" type="color" default="#202020" value="#202020"/>
+<Variable name="boton" description="Fondo del boton de estado" type="color" default="#4caf50" value="#4caf50"/>
+<Variable name="boton.interno" description="Fondo del boton interno" type="color" default="#b44335" value="#b44335"/>
+<Variable name="boton.color.interno" description="Color del boton interno" type="color" default="#e5e5e5" value="#e5e5e5"/>
+<Variable name="color.btn" description="Color Interno" type="color" default="#e5e5e5" value="#e5e5e5"/>
+</Group>
+
+/*Deleted: unnecessary elements*/
+.singleton-element:not(.cookie-choices-info),
+.item-control.blog-admin,
+.widget-item-control{display: none;}
+
+/*Fix: Blogger lightbox*/
+.CSS_LIGHTBOX{z-index: 90001 !important;}
+
+/*Fix: Post image responsive*/
+a[imageanchor],a[imageanchor] > img{margin:0!important;height:auto!important}
+
+/*Fix: Comment Editor*/
+#comment-editor{border: 0;width: 100%;min-height: 220px;}
+
+/*Fix: fb responsive hack ?= google plus hack */
+.fb-comments,.fb-comments iframe span[style],
+.fb-comments iframe[style],.fb-comments span,
+.fb-like-box,.fb-like-box iframe span[style],
+.fb-like-box iframe[style],.fb-like-box span,
+.cmt_iframe_holder, .cmt_iframe_holder > iframe {width:100%!important}
+
+/*Design: is Layout Mode*/
+body#layout .left{float: left;width: 50%;}
+body#layout .right{float: right;width: 50%;}
+
+body {
+    background: #141414;
+    color: #fff;
+}
+*{
+  text-decoration: none;
+}
+main.content {
+  position: relative;
+    display: grid;
+    grid-template-columns: 50px repeat(5,1fr);
+    max-width: 80%;
+    margin: auto;
+    background-color: $(fondo.interno);
+    padding: 15px;
+    color:$(color.title);
+}
+
+.item1 {
+    grid-column: 2/ span 5;
+}
+
+/*live boton*/
+.marker {
+    padding: 0 14px;
+    border-radius: 9px;
+    font-size: 12px;
+    text-transform: uppercase;
+    background: $boton;
+    line-height: 30px;
+    color: $(color.estado);
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+}
+
+/*body sub content*/
+.item-head-body {
+    padding: 30px 85px 30px 50px;
+    position: relative;
+    transition: all 400ms;
+}
+
+/*title info*/
+.info {
+    padding-left: 35px;
+    display: inline-block;
+    vertical-align: middle;
+}
+/*info span*/
+.info .what {
+    transition: all 400ms;
+    color: $(color.date);
+    font-size: 10px;
+    text-transform: uppercase;
+    line-height: normal;
+    display: block;
+    font-family: Montserrat, sans-serif;
+}
+.info .then {
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: normal;
+    display: block;
+    font-family: Montserrat, sans-serif;
+    transition: all 400ms;
+}
+.arrow {
+    width: 100%;
+    height: 133%;
+    background-color:$fondo;
+    display: block;
+    line-height: 100px;
+    color: #999;
+    margin-left: -15px;
+    position: relative;
+    margin-top: -15px;
+}
+.arrow:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -44px;
+    margin-left: 33px;
+    left: 0;
+    background-color:$fondo ;
+    transform: skew(-10deg);
+    transition: all 400ms;
+}
+i.fas.fa-angle-double-down {
+    position: absolute;
+    left: 38px;
+    top: 53px;
+}
+
+.btn {
+    padding: 15px 24px 13px 24px;
+    border-radius: 9px;
+    border: none;
+    background: $(boton.interno);
+    font-size: 16px;
+    color: $(boton.color.interno);
+    text-transform: uppercase;
+    font-family: Montserrat, sans-serif;
+}
+
+.item2 {
+    display: none;
+    margin-left: -15px;
+    color: $(color.btn);
+    grid-column: 1 / span 6;
+    border-top: 1px solid;
+    padding: 5px;
+    margin-top: 14px;
+    width: 101.85%;
+    height: 100%;
+	background-color:$fondo;
+}
+
+.description {
+    padding: 10px;
+}
+a [data-img='icon'] {
+    top: 24px;
+    position: absolute;
+    left: 35px;
+}
+.title{
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  padding: 10px;
+  background-color: #1f1f1f;
+}
+i.fas.fa-award {
+    color: yellowgreen;
+}
+.sub_span{
+  font-size: 15px;
+  color: #202020;
+  background: #f5f5f5;
+  padding: 5px;
+  border-radius: 5px
+}
+]]></b:skin>
+
+<b:if cond='data:view.isLayoutMode'>
+<b:template-skin><![CDATA[
+
+body#layout .add_widget {
+    border: 1px dashed #ccc;
+    padding: 16px;
+    text-align: left;
+    background-color: #2ecc71;
+}
+
+body#layout .add_widget a{
+color:#f5f5f5;
+}
+
+#logo,#fecha,#Estado,#titulo{
+    float: left;
+    width:19.8%;
+	z-index:1000 !important;
+}
+.item2{display:block;}
+.info {
+    padding-left: 35px;
+    display:block;
+    vertical-align: middle;
+}
+.item-head-body {
+    padding: 0;
+}
+.editlink:before {
+    content: "Modificar";
+    background: #15c;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    color: #fff;
+}
+}
+main.content {
+    max-width: 100%;
+}
+ body#layout .widget-content {
+    box-shadow: rgba(0,0,0,0.12) 0 0 2px 0, rgba(0,0,0,0.24) 0 2px 2px 0;
+    color: #f8f8f8;
+    line-height: 24px;
+    overflow: hidden;
+    padding: 16px;
+    position: relative;
+    text-align: left;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #4285f4;
+}
+
+
+ .item2 .layout-widget-description ,.item1 .section .add_widget , div#descripcion .add_widget , .item1 .layout-widget-description ,  div#Enlace .add_widget {
+    display: none !important;
+}
+
+]]></b:template-skin>
+</b:if>
+
+
+&lt;!--</head>--&gt;&lt;/head&gt;
+
+<body>
+
+<!-- Entradas -->
+  <b:section id='Ultimo evento'>
+    <b:widget id='Text4' locked='false' title='' type='Text' version='1'>
+      <b:widget-settings>
+        <b:widget-setting name='content'>Torneos</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+     <h2 class='title'><i class='fas fa-award'/><data:content/></h2>
+   </b:includable>
+    </b:widget>
+  </b:section>
+
+<main class='content'>
+  <a class=' arrow collapsed' href='#' id='boton'><i class='fas fa-angle-double-down'/></a>
+    <div class='item1'>
+  <div class='item-head-body'>
+ <!--Logo del equipo-->
+<b:section id='logo'>
+  <b:widget id='Image2' locked='false' title='Logotipo de la empresa' type='Image' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='displayUrl'>http://3.bp.blogspot.com/-VHl3q95Gv8w/XH0F_7SEJ9I/AAAAAAAACfI/JlHOEWboHzYnc20oH7IZFiogHYTDHnI8gCK4BGAYYCw/s1600/bird-100x100.png</b:widget-setting>
+      <b:widget-setting name='displayHeight'>100</b:widget-setting>
+      <b:widget-setting name='sectionWidth'>790</b:widget-setting>
+      <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+      <b:widget-setting name='displayWidth'>100</b:widget-setting>
+      <b:widget-setting name='link'/>
+      <b:widget-setting name='caption'/>
+    </b:widget-settings>
+    <b:includable id='main'>
+     <a expr:href='data:link'><img data-img='icon' expr:src='data:sourceUrl' height='40' width='40'/></a>
+   </b:includable>
+  </b:widget>
+</b:section>
+  <span class='info'>
+<!--fecha-->
+<b:section id='fecha'>
+  <b:widget id='Text1' locked='false' title='Fecha del evento' type='Text' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='content'>7 AGOSTO 2016 - 12 AGOSTO 2017</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'><span class='what'><data:content/></span></b:includable>
+  </b:widget>
+</b:section>
+<!--titulo-->
+<b:section id='titulo'>
+  <b:widget id='Text2' locked='false' title='Titulo del evento' type='Text' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='content'>Fornite</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'><span class='then'><data:content/></span></b:includable>
+  </b:widget>
+</b:section>
+</span>
+  <b:section id='Estado'>
+    <b:widget id='Text5' locked='false' title='Estado del evento' type='Text' version='1'>
+      <b:widget-settings>
+        <b:widget-setting name='content'>En vivo</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+<span class='marker'><data:content/></span>
+   </b:includable>
+    </b:widget>
+  </b:section>
+  </div>
+ </div>
+ <div class='item2' id='x'>
+      <div class='description'>
+ <!--Descripcion-->
+<b:section id='descripcion'>
+  <b:widget id='Text3' locked='false' title='' type='Text' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='content'><![CDATA[Curabitur id tellus mi. In laoreet lacinia luctus. Quisque ante lacus, fermentum et ante ultrices, accumsan blandit magna. Sed tincidunt placerat viverra. Integer lacinia nisi sed pharetra tempus. Nullam eu finibus odio. Etiam tristique dui posuere eros varius laoreet. Vivamus euismod neque purus, interdum eleifend nulla vulputate vel.<br/><br/>]]></b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+     <p><data:content/></p>
+   </b:includable>
+  </b:widget>
+</b:section>
+<!--Ver torneo-->
+ <b:section id='Enlace'>
+   <b:widget id='LinkList1' locked='false' title='' type='LinkList' version='1'>
+     <b:widget-settings>
+       <b:widget-setting name='sorting'>NONE</b:widget-setting>
+       <b:widget-setting name='text-1'>Resultados del torneo</b:widget-setting>
+       <b:widget-setting name='link-1'>http://</b:widget-setting>
+       <b:widget-setting name='text-0'>Ver torneo</b:widget-setting>
+       <b:widget-setting name='link-0'>http://</b:widget-setting>
+     </b:widget-settings>
+     <b:includable id='main'>
+      <b:loop values='data:links' var='link'>
+        <a class='btn' expr:href='data:link.target' expr:title='data:link.name'><data:link.name/></a>
+      </b:loop>
+   </b:includable>
+   </b:widget>
+ </b:section>
+</div>
+   
+ </div>
+ </main>
+<script type='text/javascript'>
+//<![CDATA[
+let a = 1;
+let x = document.getElementById("boton");
+ x.addEventListener("click", MostraryOcultar);
+
+function MostraryOcultar() {
+ if(a == 1){
+   document.getElementById("x").style.display="block";
+   a = a + 1;
+    }else{
+      document.getElementById("x").style.display="none";
+      a = 1;
+    }
+ }
+
+//]]></script>
+<!-- Google Analytics -->
+<b:include data='blog' name='google-analytics'/>
+&lt;!--</body>--&gt;&lt;/body&gt;
+</html>
